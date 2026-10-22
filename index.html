@@ -403,7 +403,7 @@
           <div class="mini-stats">
             <div class="item">
               <strong>2</strong>
-              <span>Featured repositories</span>
+              <span>Playground projects</span>
             </div>
             <div class="item">
               <strong>Android</strong>
@@ -441,9 +441,10 @@
         <div class="about-grid">
           <div class="panel">
             <p>
-              I’m a senior Android developer passionate about turning complex requirements into
-              clean, scalable, and elegant mobile experiences. I enjoy building software that
-              combines solid architecture, polished UI, and practical business value.
+              Senior Android Engineer with 8 years of experience delivering native mobile applications across FinTech, Web3, and E-commerce.
+              Experience spans zero-to-one builds to enterprise-grade banking SDKs. Specialized in Kotlin, Jetpack Compose, Clean Architecture,
+              and reactive systems. Experienced in modernizing legacy codebases, hardening mobile security protocols, and leveraging AI-augmented
+              workflows to accelerate engineering velocity and code quality.
             </p>
           </div>
 
@@ -460,8 +461,8 @@
 
       <section id="projects">
         <div class="section-head">
-          <h2>Featured Projects</h2>
-          <span>Current GitHub repositories</span>
+          <h2>Playground Projects</h2>
+          <span>Side experiments and hobby builds</span>
         </div>
 
         <div id="projects-grid" class="projects-grid"></div>
@@ -473,7 +474,7 @@
     </main>
 
     <script>
-      const repos = [
+      const projects = [
         {
           name: "PocketAgent",
           description: "AI-powered productivity and assistant experience for mobile workflows.",
@@ -494,29 +495,31 @@
 
       const container = document.getElementById("projects-grid");
 
-      repos.forEach((repo) => {
-        const card = document.createElement("article");
-        card.className = "project-card";
+      projects
+        .filter((repo) => repo.name !== "bkmetcodes.github.io")
+        .forEach((repo) => {
+          const card = document.createElement("article");
+          card.className = "project-card";
 
-        card.innerHTML = `
-          <div class="project-top">
-            <h3>${repo.name}</h3>
-            <p>${repo.description}</p>
-          </div>
+          card.innerHTML = `
+            <div class="project-top">
+              <h3>${repo.name}</h3>
+              <p>${repo.description}</p>
+            </div>
 
-          <div class="project-meta">
-            <span>⭐ ${repo.stargazers_count}</span>
-            <span>🍴 ${repo.forks_count}</span>
-            <span>• ${repo.language}</span>
-          </div>
+            <div class="project-meta">
+              <span>⭐ ${repo.stargazers_count}</span>
+              <span>🍴 ${repo.forks_count}</span>
+              <span>• ${repo.language}</span>
+            </div>
 
-          <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
-            View Repository →
-          </a>
-        `;
+            <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
+              View Repository →
+            </a>
+          `;
 
-        container.appendChild(card);
-      });
+          container.appendChild(card);
+        });
     </script>
   </body>
 </html>
