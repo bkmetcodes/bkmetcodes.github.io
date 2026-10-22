@@ -301,7 +301,7 @@
         border: 1px solid var(--border);
         border-radius: 22px;
         padding: 22px;
-        min-height: 240px;
+        min-height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -321,17 +321,6 @@
         line-height: 1.7;
       }
 
-      .project-meta {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
-      .project-meta span { display: inline-flex; align-items: center; gap: 6px; }
-
       .repo-link {
         margin-top: 18px;
         display: inline-flex;
@@ -347,11 +336,6 @@
         color: var(--muted);
         border-top: 1px solid var(--border);
         padding-top: 28px;
-      }
-
-      .loading-text {
-        color: var(--muted);
-        font-size: 0.96rem;
       }
 
       @media (max-width: 900px) {
@@ -478,42 +462,34 @@
         {
           name: "PocketAgent",
           description: "AI-powered productivity and assistant experience for mobile workflows.",
-          html_url: "https://github.com/bkmetcodes/PocketAgent",
-          stargazers_count: 0,
-          forks_count: 0,
-          language: "Kotlin"
+          html_url: "https://github.com/bkmetcodes/PocketAgent"
         },
         {
           name: "AlphaPulse",
-          description: "A modern Android project focused on performance, clean architecture, and product experience.",
-          html_url: "https://github.com/bkmetcodes/AlphaPulse",
-          stargazers_count: 0,
-          forks_count: 0,
-          language: "Kotlin"
+          description: "AI-powered stock portfolio — currently working on it.",
+          html_url: "https://github.com/bkmetcodes/AlphaPulse"
         }
       ];
 
       const container = document.getElementById("projects-grid");
 
-      projects
-        .filter((repo) => repo.name !== "bkmetcodes.github.io")
-        .forEach((repo) => {
-          const card = document.createElement("article");
-          card.className = "project-card";
+      projects.forEach((repo) => {
+        const card = document.createElement("article");
+        card.className = "project-card";
 
-          card.innerHTML = `
-            <div class="project-top">
-              <h3>${repo.name}</h3>
-              <p>${repo.description}</p>
-            </div>
+        card.innerHTML = `
+          <div class="project-top">
+            <h3>${repo.name}</h3>
+            <p>${repo.description}</p>
+          </div>
 
-            <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
-              View Repository →
-            </a>
-          `;
+          <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
+            View Repository →
+          </a>
+        `;
 
-          container.appendChild(card);
-        });
+        container.appendChild(card);
+      });
     </script>
   </body>
 </html>
