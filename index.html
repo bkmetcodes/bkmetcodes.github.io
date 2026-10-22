@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beka Metreveli | Senior Android Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Beka Metreveli, Senior Android Developer."
+    />
+    <style>
+      :root {
+        --bg: #070b14;
+        --bg-soft: #0d1421;
+        --panel: rgba(17, 24, 39, 0.9);
+        --panel-alt: rgba(15, 23, 42, 0.85);
+        --text: #edf2ff;
+        --muted: #93a4c4;
+        --primary: #7c9cff;
+        --secondary: #4fd1c5;
+        --accent: #a78bfa;
+        --border: rgba(148, 163, 184, 0.18);
+        --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(124, 156, 255, 0.18), transparent 35%),
+          radial-gradient(circle at bottom right, rgba(79, 209, 197, 0.14), transparent 32%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 22px 80px;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(7, 11, 20, 0.6);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: var(--text);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 34px;
+        align-items: center;
+        padding: 72px 0 50px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(124, 156, 255, 0.12);
+        border: 1px solid rgba(124, 156, 255, 0.2);
+        color: #dfe9ff;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 6vw, 5rem);
+        line-height: 1.04;
+        margin: 18px 0 16px;
+        letter-spacing: -0.06em;
+      }
+
+      .gradient-text {
+        background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .lead {
+        max-width: 650px;
+        font-size: 1.08rem;
+        line-height: 1.8;
+        color: var(--muted);
+        margin-bottom: 28px;
+      }
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        box-shadow: var(--shadow);
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+      }
+
+      .mini-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        margin-top: 18px;
+      }
+
+      .mini-stats .item {
+        min-width: 120px;
+      }
+
+      .mini-stats strong {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+
+      .mini-stats span {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .profile-card {
+        background: linear-gradient(180deg, rgba(17, 24, 39, 0.95), rgba(10, 15, 24, 0.95));
+        border: 1px solid var(--border);
+        border-radius: 26px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .avatar-wrap {
+        width: 160px;
+        height: 160px;
+        border-radius: 22px;
+        margin: 0 auto 18px;
+        background: linear-gradient(135deg, rgba(124, 156, 255, 0.3), rgba(167, 139, 250, 0.3));
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .profile-details {
+        text-align: center;
+      }
+
+      .profile-details h3 {
+        margin: 0 0 8px;
+        font-size: 1.6rem;
+      }
+
+      .profile-details p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .skill-tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 18px;
+      }
+
+      .skill-tags span {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: #dfe9ff;
+        font-size: 0.8rem;
+      }
+
+      section {
+        padding-top: 26px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        letter-spacing: -0.04em;
+      }
+
+      .section-head span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+      }
+
+      .panel {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 1.02rem;
+      }
+
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .checklist li::before {
+        content: "✓";
+        color: var(--secondary);
+        font-weight: 700;
+        margin-top: 1px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 22px;
+        margin-top: 10px;
+      }
+
+      .project-card {
+        background: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(10, 15, 24, 0.9));
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 22px;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(124, 156, 255, 0.4);
+      }
+
+      .project-top {
+        margin-bottom: 18px;
+      }
+
+      .project-top h3 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+      }
+
+      .project-top p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .project-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .project-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .repo-link {
+        margin-top: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .footer {
+        margin-top: 52px;
+        text-align: center;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+        padding-top: 28px;
+      }
+
+      .loading-text {
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 40px;
+        }
+
+        .nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .btn {
+          width: 100%;
+        }
+
+        .cta-row {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="brand">Beka Metreveli</div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="https://github.com/bkmetcodes" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:your-email@example.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Available for software opportunities</div>
+          <h1>
+            I build
+            <span class="gradient-text">Android & mobile experiences</span>
+            that feel seamless.
+          </h1>
+
+          <p class="lead">
+            I’m <strong>Beka Metreveli</strong>, a Senior Android Developer focused on creating
+            reliable, high-performance mobile products with a strong user-centric approach.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="https://github.com/bkmetcodes" target="_blank" rel="noreferrer">
+              GitHub Profile
+            </a>
+          </div>
+
+          <div class="mini-stats">
+            <div class="item">
+              <strong>8+</strong>
+              <span>Years building apps</span>
+            </div>
+            <div class="item">
+              <strong>20+</strong>
+              <span>Projects delivered</span>
+            </div>
+            <div class="item">
+              <strong>Android</strong>
+              <span>Specialized</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="avatar-wrap">BM</div>
+          <div class="profile-details">
+            <h3>Beka Metreveli</h3>
+            <p>Senior Android Developer</p>
+            <div class="skill-tags">
+              <span>Kotlin</span>
+              <span>Jetpack Compose</span>
+              <span>MVVM</span>
+              <span>Android SDK</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <h2>About Me</h2>
+          <span>Android • Product • Quality</span>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <p>
+              I’m a senior Android developer passionate about turning complex requirements into
+              clean, scalable, and elegant mobile experiences. I enjoy building software that
+              combines solid architecture, polished UI, and practical business value.
+            </p>
+          </div>
+
+          <div class="panel">
+            <ul class="checklist">
+              <li>Strong experience in Android app development</li>
+              <li>Focused on maintainable and scalable architecture</li>
+              <li>Comfortable with modern Android tooling and workflows</li>
+              <li>Interested in product-focused engineering and quality</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <span>Live from GitHub</span>
+        </div>
+
+        <div id="projects-grid" class="projects-grid">
+          <div class="loading-text">Loading repositories...</div>
+        </div>
+      </section>
+
+      <div class="footer">
+        © 2026 Beka Metreveli • Senior Android Developer
+      </div>
+    </main>
+
+    <script>
+      const username = "bkmetcodes";
+
+      async function loadProjects() {
+        const container = document.getElementById("projects-grid");
+
+        try {
+          const res = await fetch(
+            `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
+          );
+
+          if (!res.ok) {
+            throw new Error("GitHub request failed");
+          }
+
+          const repos = await res.json();
+
+          const visibleRepos = repos
+            .filter((repo) => !repo.fork && !repo.private)
+            .sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+          if (!visibleRepos.length) {
+            container.innerHTML = "<div class='loading-text'>No public repositories found.</div>";
+            return;
+          }
+
+          container.innerHTML = "";
+
+          visibleRepos.forEach((repo) => {
+            const card = document.createElement("article");
+            card.className = "project-card";
+
+            const description =
+              repo.description || "No description provided for this project.";
+
+            const lang = repo.language || "Code";
+
+            card.innerHTML = `
+              <div class="project-top">
+                <h3>${repo.name}</h3>
+                <p>${description}</p>
+              </div>
+
+              <div class="project-meta">
+                <span>⭐ ${repo.stargazers_count}</span>
+                <span>🍴 ${repo.forks_count}</span>
+                <span>• ${lang}</span>
+              </div>
+
+              <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
+                View Repository →
+              </a>
+            `;
+
+            container.appendChild(card);
+          });
+        } catch (error) {
+          container.innerHTML =
+            "<div class='loading-text'>Unable to load repository data right now.</div>";
+        }
+      }
+
+      loadProjects();
+    </script>
+  </body>
+</html>
