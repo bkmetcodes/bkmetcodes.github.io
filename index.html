@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beka Metreveli | Senior Android Developer</title>
-    <meta
-      name="description"
-      content="Portfolio of Beka Metreveli, Senior Android Developer."
-    />
+    <meta name="description" content="Portfolio of Beka Metreveli, Senior Android Developer." />
     <style>
       :root {
         --bg: #070b14;
@@ -23,13 +20,8 @@
         --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
 
       body {
         margin: 0;
@@ -41,10 +33,7 @@
         color: var(--text);
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+      a { color: inherit; text-decoration: none; }
 
       .container {
         max-width: 1180px;
@@ -92,9 +81,7 @@
         transition: color 0.2s ease;
       }
 
-      .nav-links a:hover {
-        color: var(--text);
-      }
+      .nav-links a:hover { color: var(--text); }
 
       .hero {
         display: grid;
@@ -156,11 +143,10 @@
         border-radius: 12px;
         font-weight: 600;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid transparent;
       }
 
-      .btn:hover {
-        transform: translateY(-1px);
-      }
+      .btn:hover { transform: translateY(-1px); }
 
       .btn-primary {
         background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -170,8 +156,8 @@
 
       .btn-secondary {
         color: var(--text);
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.03);
+        border-color: var(--border);
       }
 
       .mini-stats {
@@ -181,9 +167,7 @@
         margin-top: 18px;
       }
 
-      .mini-stats .item {
-        min-width: 120px;
-      }
+      .mini-stats .item { min-width: 120px; }
 
       .mini-stats strong {
         display: block;
@@ -219,19 +203,9 @@
         color: var(--text);
       }
 
-      .profile-details {
-        text-align: center;
-      }
-
-      .profile-details h3 {
-        margin: 0 0 8px;
-        font-size: 1.6rem;
-      }
-
-      .profile-details p {
-        margin: 0;
-        color: var(--muted);
-      }
+      .profile-details { text-align: center; }
+      .profile-details h3 { margin: 0 0 8px; font-size: 1.6rem; }
+      .profile-details p { margin: 0; color: var(--muted); }
 
       .skill-tags {
         display: flex;
@@ -250,9 +224,7 @@
         font-size: 0.8rem;
       }
 
-      section {
-        padding-top: 26px;
-      }
+      section { padding-top: 26px; }
 
       .section-head {
         display: flex;
@@ -341,15 +313,8 @@
         border-color: rgba(124, 156, 255, 0.4);
       }
 
-      .project-top {
-        margin-bottom: 18px;
-      }
-
-      .project-top h3 {
-        margin: 0 0 10px;
-        font-size: 1.3rem;
-      }
-
+      .project-top { margin-bottom: 18px; }
+      .project-top h3 { margin: 0 0 10px; font-size: 1.3rem; }
       .project-top p {
         margin: 0;
         color: var(--muted);
@@ -365,11 +330,7 @@
         font-size: 0.82rem;
       }
 
-      .project-meta span {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
+      .project-meta span { display: inline-flex; align-items: center; gap: 6px; }
 
       .repo-link {
         margin-top: 18px;
@@ -394,30 +355,14 @@
       }
 
       @media (max-width: 900px) {
-        .hero,
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .hero {
-          padding-top: 40px;
-        }
-
-        .nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+        .hero, .about-grid { grid-template-columns: 1fr; }
+        .hero { padding-top: 40px; }
+        .nav { flex-direction: column; align-items: flex-start; }
       }
 
       @media (max-width: 560px) {
-        .btn {
-          width: 100%;
-        }
-
-        .cta-row {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
+        .btn { width: 100%; }
+        .cta-row { display: grid; grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -429,7 +374,8 @@
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="https://github.com/bkmetcodes" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="mailto:your-email@example.com">Contact</a>
+          <a href="https://www.linkedin.com/in/bk-met-codes/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:bk.met.codes@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
@@ -451,23 +397,21 @@
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="https://github.com/bkmetcodes" target="_blank" rel="noreferrer">
-              GitHub Profile
-            </a>
+            <a class="btn btn-secondary" href="https://github.com/bkmetcodes" target="_blank" rel="noreferrer">GitHub Profile</a>
           </div>
 
           <div class="mini-stats">
             <div class="item">
-              <strong>8+</strong>
-              <span>Years building apps</span>
-            </div>
-            <div class="item">
-              <strong>20+</strong>
-              <span>Projects delivered</span>
+              <strong>2</strong>
+              <span>Featured repositories</span>
             </div>
             <div class="item">
               <strong>Android</strong>
-              <span>Specialized</span>
+              <span>Senior focus</span>
+            </div>
+            <div class="item">
+              <strong>UX + Code</strong>
+              <span>Product thinking</span>
             </div>
           </div>
         </div>
@@ -517,12 +461,10 @@
       <section id="projects">
         <div class="section-head">
           <h2>Featured Projects</h2>
-          <span>Live from GitHub</span>
+          <span>Current GitHub repositories</span>
         </div>
 
-        <div id="projects-grid" class="projects-grid">
-          <div class="loading-text">Loading repositories...</div>
-        </div>
+        <div id="projects-grid" class="projects-grid"></div>
       </section>
 
       <div class="footer">
@@ -531,68 +473,50 @@
     </main>
 
     <script>
-      const username = "bkmetcodes";
-
-      async function loadProjects() {
-        const container = document.getElementById("projects-grid");
-
-        try {
-          const res = await fetch(
-            `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
-          );
-
-          if (!res.ok) {
-            throw new Error("GitHub request failed");
-          }
-
-          const repos = await res.json();
-
-          const visibleRepos = repos
-            .filter((repo) => !repo.fork && !repo.private)
-            .sort((a, b) => b.stargazers_count - a.stargazers_count);
-
-          if (!visibleRepos.length) {
-            container.innerHTML = "<div class='loading-text'>No public repositories found.</div>";
-            return;
-          }
-
-          container.innerHTML = "";
-
-          visibleRepos.forEach((repo) => {
-            const card = document.createElement("article");
-            card.className = "project-card";
-
-            const description =
-              repo.description || "No description provided for this project.";
-
-            const lang = repo.language || "Code";
-
-            card.innerHTML = `
-              <div class="project-top">
-                <h3>${repo.name}</h3>
-                <p>${description}</p>
-              </div>
-
-              <div class="project-meta">
-                <span>⭐ ${repo.stargazers_count}</span>
-                <span>🍴 ${repo.forks_count}</span>
-                <span>• ${lang}</span>
-              </div>
-
-              <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
-                View Repository →
-              </a>
-            `;
-
-            container.appendChild(card);
-          });
-        } catch (error) {
-          container.innerHTML =
-            "<div class='loading-text'>Unable to load repository data right now.</div>";
+      const repos = [
+        {
+          name: "PocketAgent",
+          description: "AI-powered productivity and assistant experience for mobile workflows.",
+          html_url: "https://github.com/bkmetcodes/PocketAgent",
+          stargazers_count: 0,
+          forks_count: 0,
+          language: "Kotlin"
+        },
+        {
+          name: "AlphaPulse",
+          description: "A modern Android project focused on performance, clean architecture, and product experience.",
+          html_url: "https://github.com/bkmetcodes/AlphaPulse",
+          stargazers_count: 0,
+          forks_count: 0,
+          language: "Kotlin"
         }
-      }
+      ];
 
-      loadProjects();
+      const container = document.getElementById("projects-grid");
+
+      repos.forEach((repo) => {
+        const card = document.createElement("article");
+        card.className = "project-card";
+
+        card.innerHTML = `
+          <div class="project-top">
+            <h3>${repo.name}</h3>
+            <p>${repo.description}</p>
+          </div>
+
+          <div class="project-meta">
+            <span>⭐ ${repo.stargazers_count}</span>
+            <span>🍴 ${repo.forks_count}</span>
+            <span>• ${repo.language}</span>
+          </div>
+
+          <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
+            View Repository →
+          </a>
+        `;
+
+        container.appendChild(card);
+      });
     </script>
   </body>
 </html>
